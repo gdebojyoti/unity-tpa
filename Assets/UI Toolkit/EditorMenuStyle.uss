@@ -1,0 +1,14 @@
+.tile-cta {
+    background-color: rgb(225, 142, 83);
+    -unity-font-style: bold;
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+}
+
+.right-sidebar {
+    width: 200px;
+    align-items: stretch;
+    align-self: flex-end;
+    background-color: rgba(0, 0, 0, 0.08);
+}
