@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClickToPlace : MonoBehaviour
@@ -7,6 +8,7 @@ public class ClickToPlace : MonoBehaviour
     public GameObject tilePrefab;  // Reference to the tile prefab
     private Camera mainCamera;      // Reference to the main camera
     private Dictionary<Vector2, GameObject> placedTiles; // Dictionary to keep track of placed tiles
+    public List<TileData> tileDataList; // List to store tile data
 
     void Start()
     {
@@ -16,8 +18,9 @@ public class ClickToPlace : MonoBehaviour
             mainCamera = Camera.main;
         }
 
-        // Initialize the dictionary
+        // Initialize the dictionary and the list
         placedTiles = new Dictionary<Vector2, GameObject>();
+        tileDataList = new List<TileData>();
     }
 
     void Update()
@@ -40,11 +43,20 @@ public class ClickToPlace : MonoBehaviour
 
                 // Add the position and the tile to the dictionary
                 placedTiles.Add(mousePosition, newTile);
+
+                // Add the tile data to the list (replace "TileType" with actual type)
+                tileDataList.Add(new TileData(mousePosition, (int)TileTypes.Ground));
             }
             else
             {
                 Debug.Log("Tile already exists at this position.");
             }
         }
+    }
+
+    // Method to get the list of tile data (for future JSON export)
+    public List<TileData> GetTileDataList()
+    {
+        return tileDataList;
     }
 }
