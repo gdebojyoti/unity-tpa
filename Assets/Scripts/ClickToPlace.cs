@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class ClickToPlace : MonoBehaviour
 {
-    public GameObject tilePrefab;  // Reference to the tile prefab
+    // public GameObject tilePrefab;  // Reference to the tile prefab
+    public TileManager tileManager;  // Reference to the TileManager
     private Camera mainCamera;      // Reference to the main camera
     private Dictionary<Vector2, GameObject> placedTiles; // Dictionary to keep track of placed tiles
     public List<MapTileData> mapTileDataList; // List to store tile data
+
+    public TileTypes currentTileType = TileTypes.Ground; // Current tile type
 
     void Start()
     {
@@ -36,14 +39,19 @@ public class ClickToPlace : MonoBehaviour
             // Check if a tile already exists at the mouse position
             if (!placedTiles.ContainsKey(mousePosition))
             {
-                // Instantiate the tile at the mouse position
-                GameObject newTile = Instantiate(tilePrefab, mousePosition, Quaternion.identity);
+                // Getting a tile according the currently selected tile type
+                GameObject tilePrefab = tileManager.GetTilePrefab(currentTileType);
 
-                // Add the position and the tile to the dictionary
-                placedTiles.Add(mousePosition, newTile);
+                if (tilePrefab != null) {
+                    // Instantiate the tile at the mouse position
+                    GameObject newTile = Instantiate(tilePrefab, mousePosition, Quaternion.identity);
 
-                // Add the tile data to the list (replace "TileType" with actual type)
-                mapTileDataList.Add(new MapTileData(mousePosition, (int)TileTypes.Ground));
+                    // Add the position and the tile to the dictionary
+                    placedTiles.Add(mousePosition, newTile);
+
+                    // Add the tile data to the list, according to the currently selected tile type
+                    mapTileDataList.Add(new MapTileData(mousePosition, (int)currentTileType));
+                }
             }
             else
             {
@@ -53,7 +61,7 @@ public class ClickToPlace : MonoBehaviour
     }
 
     // Method to get the list of tile data (for future JSON export)
-    public List<MapTileData> GetTileDataList()
+    public List<MapTileData> GetMapTileDataList()
     {
         return mapTileDataList;
     }
