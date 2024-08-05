@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d794d0286fa01444aa863319aa7efda5, type: 3}
-  m_Name: Dummy Water
+  m_Name: Dummy Grass
   m_EditorClassIdentifier: 
-  tileType: 4
-  prefab: {fileID: 6273022496628571856, guid: a99acf3ceaf978a4cab82302d1dc2f16, type: 3}
+  tileType: 1
+  id: e379684c-6688-4030-b34e-769242e01990
+  prefab: {fileID: 2877300575342801514, guid: 0c4b6f52acc8b2a4999230ba9643fa70, type: 3}

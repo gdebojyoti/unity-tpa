@@ -9,7 +9,7 @@ public class ClickToPlace : MonoBehaviour
     private Dictionary<Vector2, GameObject> placedTiles; // Dictionary to keep track of placed tiles
     public List<MapTileData> mapTileDataList; // List to store tile data
 
-    public TileTypes currentTileType = TileTypes.Ground; // Current tile type
+    public TileData currentTile; // Current tile type
 
     void Start()
     {
@@ -40,7 +40,7 @@ public class ClickToPlace : MonoBehaviour
             if (!placedTiles.ContainsKey(mousePosition))
             {
                 // Getting a tile according the currently selected tile type
-                GameObject tilePrefab = tileManager.GetTilePrefab(currentTileType);
+                GameObject tilePrefab = tileManager.GetTilePrefab(currentTile.id);
 
                 if (tilePrefab != null) {
                     // Instantiate the tile at the mouse position
@@ -50,12 +50,12 @@ public class ClickToPlace : MonoBehaviour
                     placedTiles.Add(mousePosition, newTile);
 
                     // Add the tile data to the list, according to the currently selected tile type
-                    mapTileDataList.Add(new MapTileData(mousePosition, (int)currentTileType));
+                    mapTileDataList.Add(new MapTileData(mousePosition, currentTile.id));
                 }
             }
             else
             {
-                Debug.Log("Tile already exists at this position.");
+                Debug.Log("Tile already exists at this position.!");
             }
         }
     }

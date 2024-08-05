@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileManager: {fileID: 14573973}
   mapTileDataList: []
-  currentTileType: 1
+  currentTile: {fileID: 11400000, guid: c6b2cae8ede0cba428dc1a7ba4faa7c0, type: 2}
 --- !u!4 &392846114
 Transform:
   m_ObjectHideFlags: 0
@@ -418,5 +418,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1007805830}
   - {fileID: 392846114}
-  - {fileID: 1195424095}
   - {fileID: 14573974}
+  - {fileID: 1195424095}
