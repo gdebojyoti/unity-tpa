@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClickToPlace : MonoBehaviour
+public class TilePlacer : MonoBehaviour
 {
     public TileManager tileManager; // Reference to the TileManager
     private Camera mainCamera; // Reference to the main camera

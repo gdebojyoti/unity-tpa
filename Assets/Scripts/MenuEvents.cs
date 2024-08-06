@@ -7,13 +7,13 @@ public class MenuEvents : MonoBehaviour
 {
     public TileDataContainer tileDataContainer;  // Reference to the TileDataContainer ScriptableObject
     private UIDocument uiDocument;
-    private ClickToPlace clickToPlace; // Reference to ClickToPlace script
+    private TilePlacer tilePlacer; // Reference to TilePlacer script
     private readonly List<Button> buttons = new(); // All buttons
 
     void Awake()
     {
         uiDocument = GetComponent<UIDocument>();
-        clickToPlace = FindObjectOfType<ClickToPlace>(); // Find the ClickToPlace script in the scene
+        tilePlacer = FindObjectOfType<TilePlacer>(); // Find the TilePlacer script in the scene
 
         // Fill the buttons list with all buttons with class .tile-cta
         buttons.AddRange(uiDocument.rootVisualElement.Query<Button>().ToList());
@@ -35,7 +35,7 @@ public class MenuEvents : MonoBehaviour
             button.RegisterCallback<ClickEvent>(evt => {
                 if (tileData != null)
                 {
-                    clickToPlace.SetCurrentTile(tileData);
+                    tilePlacer.SetCurrentTile(tileData);
                     Debug.Log($"Current tile set to: {buttonId}");
                 }
                 else {
