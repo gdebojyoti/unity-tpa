@@ -15,3 +15,4 @@ MonoBehaviour:
   tileType: 4
   id: 002b27ae-6fbe-4442-b831-90a6cb4b5717
   prefab: {fileID: 6273022496628571856, guid: a99acf3ceaf978a4cab82302d1dc2f16, type: 3}
+  ctaId: water

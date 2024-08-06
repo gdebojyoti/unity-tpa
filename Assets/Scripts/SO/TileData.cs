@@ -7,6 +7,7 @@ public class TileData : ScriptableObject
     public string id;
     // public string packId; // reference to the theme to which this asset belongs
     public GameObject prefab;
+    public string ctaId;
 
     private void OnEnable()
     {

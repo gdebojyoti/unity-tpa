@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Dummy Soil
   m_EditorClassIdentifier: 
   tileType: 1
+  id: e92eb179-ce07-4297-a5ef-49b003a916be
   prefab: {fileID: 4599492292946643669, guid: 7d3e41d22e8485c429f713f5eb83c589, type: 3}
+  ctaId: soil

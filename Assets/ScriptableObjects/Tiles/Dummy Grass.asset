@@ -15,3 +15,4 @@ MonoBehaviour:
   tileType: 1
   id: e379684c-6688-4030-b34e-769242e01990
   prefab: {fileID: 2877300575342801514, guid: 0c4b6f52acc8b2a4999230ba9643fa70, type: 3}
+  ctaId: grass
