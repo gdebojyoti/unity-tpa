@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d794d0286fa01444aa863319aa7efda5, type: 3}
+  m_Name: Dummy Grass
+  m_EditorClassIdentifier: 
+  tileType: 1
+  id: e379684c-6688-4030-b34e-769242e01990
+  prefab: {fileID: 2877300575342801514, guid: 0c4b6f52acc8b2a4999230ba9643fa70, type: 3}
+  ctaId: grass

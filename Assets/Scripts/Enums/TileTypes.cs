@@ -1,5 +1,9 @@
 public enum TileTypes
 {
-    Dummy = 1,
-    Ground = 2
+    Dummy = 31291,
+    Ground = 1,
+    Cloud = 2,
+    Tree = 3,
+    Water = 4,
+    Lava = 5
 }
