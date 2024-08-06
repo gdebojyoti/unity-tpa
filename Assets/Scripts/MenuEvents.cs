@@ -36,7 +36,6 @@ public class MenuEvents : MonoBehaviour
                 if (tileData != null)
                 {
                     tilePlacer.SetCurrentTile(tileData);
-                    Debug.Log($"Current tile set to: {buttonId}");
                 }
                 else {
                     Debug.Log($"Tile not found for button: {buttonId}");

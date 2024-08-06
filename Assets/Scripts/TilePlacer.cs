@@ -34,7 +34,6 @@ public class TilePlacer : MonoBehaviour
         // Check if the left mouse button is clicked and the pointer is not over a UI element
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            Debug.Log("Left mouse button clicked!");
             // Get the mouse position in world coordinates
             Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
