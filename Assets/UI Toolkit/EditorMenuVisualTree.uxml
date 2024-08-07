@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/EditorMenuStyle.uss?fileID=7433441132597879392&amp;guid=21cc3e1fd9201f14c90185d9e0adcd37&amp;type=3#EditorMenuStyle" />
     <ui:VisualElement name="RightSidebar" class="right-sidebar" style="flex-grow: 1;">
+        <ui:Button text="Save map" parse-escape-sequences="true" display-tooltip-when-elided="true" name="save-map" />
         <ui:Button text="SOIL" parse-escape-sequences="true" display-tooltip-when-elided="true" name="soil" class="tile-cta" />
         <ui:Button text="GRASS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="grass" class="tile-cta" />
         <ui:Button text="WATER" parse-escape-sequences="true" display-tooltip-when-elided="true" name="water" class="tile-cta" />
