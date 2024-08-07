@@ -9,6 +9,7 @@ public class TilePlacer : MonoBehaviour
     private Dictionary<Vector2, GameObject> placedTiles; // Dictionary to keep track of placed tiles
     public List<MapTileData> mapTileDataList; // List to store tile data
 
+    [LabelOverride("Currently selected Tile")]
     public TileData currentTile; // Current tile type
 
     void Start()
