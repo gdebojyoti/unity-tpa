@@ -6,6 +6,9 @@ public class MapLoader : MonoBehaviour
 {
     public TileManager tileManager; // Reference to the TileManager script
     private string filePath;
+    
+    // TODO: Find a way to use LayerMask instead of string
+    public string groundLayerName = "Ground"; // Name of the ground layer
 
     [System.Serializable]
     public class MapData
@@ -38,6 +41,9 @@ public class MapLoader : MonoBehaviour
                     {
                         newTile.AddComponent<BoxCollider2D>();
                     }
+
+                    // Set the layer of the tile to the "Ground" layer
+                    newTile.layer = LayerMask.NameToLayer(groundLayerName);
                 }
             }
         }
