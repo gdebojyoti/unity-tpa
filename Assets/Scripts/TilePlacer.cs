@@ -80,4 +80,10 @@ public class TilePlacer : MonoBehaviour
     {
         currentTile = tileData;
     }
+
+    // Method to get the list of tile data (for future JSON export)
+    public List<MapTileData> GetTileDataList()
+    {
+        return mapTileDataList;
+    }
 }
