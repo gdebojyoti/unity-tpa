@@ -31,7 +31,13 @@ public class MapLoader : MonoBehaviour
                 GameObject tilePrefab = tileManager.GetTilePrefab(tileData.tileId);
                 if (tilePrefab != null)
                 {
-                    Instantiate(tilePrefab, tileData.position, Quaternion.identity);
+                    GameObject newTile = Instantiate(tilePrefab, tileData.position, Quaternion.identity);
+
+                    // Add a BoxCollider2D to the tile if it doesn't already have one
+                    if (newTile.GetComponent<BoxCollider2D>() == null)
+                    {
+                        newTile.AddComponent<BoxCollider2D>();
+                    }
                 }
             }
         }
