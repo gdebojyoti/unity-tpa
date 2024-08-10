@@ -43,8 +43,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Move the player
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        // Move the player by finding the target velocity
+        Vector2 targetVelocity = new(moveInput * moveSpeed, rb.velocity.y);
+        // And then smoothing it out and applying it to the player
+        rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref moveVelocity, 0.05f);
     }
 
     void Jump()
